@@ -1,8 +1,8 @@
-const heroi ={
-    nome:"Arthur",
-    vitorias: 50,
-    derotas:4
-}
+const herois = [{ nome:"Arthur", vitorias: 50, derotas:4},
+                { nome:"Paulo", vitorias: 60, derotas:7},
+                { nome:"Joana", vitorias: 100, derotas:12},
+                { nome:"Bill", vitorias: 10, derotas:4}
+                ]
 
 
 function calcularSaldo(vitorias,derotas){
@@ -19,6 +19,9 @@ function calcularNivel(saldo){
         case saldo>100: return "Imortal"
     }   
 }
-const saldo = calcularSaldo(heroi.vitorias,heroi.derotas)
-const nivel = calcularNivel(saldo)
-console.log(`O Herói de nome ${heroi.nome} tem de saldo de ${saldo} está no nível de ${nivel}`)
+
+for(heroi of herois){
+    const saldo = calcularSaldo(heroi.vitorias,heroi.derotas)
+    const nivel = calcularNivel(saldo)
+    console.log(`O Herói de nome ${heroi.nome} tem de saldo de ${saldo} está no nível de ${nivel}`)
+}
